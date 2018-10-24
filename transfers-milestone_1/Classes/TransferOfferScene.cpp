@@ -24,7 +24,11 @@ bool TransferOfferScene::init()
 
     auto back_button = gui::CreateButton("Back");
     mLayout.addButton(back_button, [](){ backClicked(); });
-    mLayout.setPosition(Vec2{ origin.x + visible_size.width / 4, origin.y + visible_size.height - visible_size.height / 10 });
+    mLayout.setPosition(Vec2{ origin.x + visible_size.width / 4, origin.y + visible_size.height/ 4 });
+
+
+
+
 
     return true;
 }

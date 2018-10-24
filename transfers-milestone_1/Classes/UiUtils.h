@@ -24,6 +24,23 @@ inline cocos2d::ui::Button* CreateButton(const std::string& text)
 }
 
 /**
+* @brief CreateTextButton Helper for buttons text button creating
+* @param text button label
+* @return pointer to cocos2d::Button created
+*/
+inline cocos2d::ui::Button* CreateTextButton(const std::string& text)
+{
+	auto button = cocos2d::ui::Button::create();
+	// button->setScale(1.5f);
+	button->setTitleFontSize(14.0f);
+	button->setTitleColor(cocos2d::Color3B::BLACK);
+	button->setTitleText(text);
+	return button;
+}
+
+
+
+/**
  * @brief Helper for building buttons with vertical layout
  */
 class VerticalLayoutWithButtons

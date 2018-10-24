@@ -10,6 +10,7 @@ class TransferNewsTableViewDataSource : public cocos2d::extension::TableViewData
 public:
     cocos2d::extension::TableViewCell* tableCellAtIndex(cocos2d::extension::TableView* table, ssize_t idx) override;
     ssize_t numberOfCellsInTableView(cocos2d::extension::TableView* table) override;
+	cocos2d::Size tableCellSizeForIndex(cocos2d::extension::TableView* table, ssize_t idx) override;
 };
 
 class TransferNewsTableViewDelegate : public cocos2d::extension::TableViewDelegate

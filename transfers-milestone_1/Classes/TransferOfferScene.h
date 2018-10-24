@@ -20,4 +20,5 @@ public:
 	CREATE_FUNC(TransferOfferScene);
     static void backClicked();
 };
+
 }
