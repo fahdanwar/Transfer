@@ -29,7 +29,7 @@ public:
     static cocos2d::Scene* createScene();
     bool init() override;
     void menuCloseCallback(cocos2d::Ref* sender);
-    CREATE_FUNC(BasicOfferScene);
+    //CREATE_FUNC(BasicOfferScene);
 
 protected:
     gui::VerticalLayoutWithButtons mLayout;

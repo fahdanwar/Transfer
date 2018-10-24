@@ -17,6 +17,7 @@ class ContractOfferScene : public BasicOfferScene
 {
 public:
     bool init() override;
+	CREATE_FUNC(ContractOfferScene);
     static void backClicked();
 };
 }

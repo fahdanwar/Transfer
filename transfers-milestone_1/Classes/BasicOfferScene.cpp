@@ -9,7 +9,9 @@ cocos2d::extension::TableViewCell* BasicOfferTableViewDataSource::tableCellAtInd
     cocos2d::extension::TableView* table, ssize_t idx)
 {
     auto cell = table->dequeueCell();
-	
+	Size visible_size = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
     cell = TableViewCell::create();
     auto background_color = Color3B(255, 255, 255);
     Sprite * bg = Sprite::create();
@@ -17,16 +19,16 @@ cocos2d::extension::TableViewCell* BasicOfferTableViewDataSource::tableCellAtInd
     bg->setTextureRect(Rect(0, 0, Director::getInstance()->getWinSize().width, 24));
     bg->setColor(background_color);
     bg->setTag(100);
-	bg->setAnchorPoint(Vec2(0, 1));
-	bg->setPosition(Vec2(200, 0));
+	//bg->setAnchorPoint(Vec2(0, 1));
+	bg->setPosition(Vec2(visible_size.width/4, 0));
 //    cell->addChild(bg);
 	auto rectNode = DrawNode::create();
 	
 	Vec2 rectangle[4];
-	rectangle[0] = Vec2(-100, -5);//bl,br,tl,tr
-	rectangle[1] = Vec2(400, -5);
-	rectangle[2] = Vec2(400, 20);
-	rectangle[3] = Vec2(-100, 20);
+	rectangle[0] = Vec2(visible_size.width / 4, -5);//bl,br,tl,tr
+	rectangle[1] = Vec2(visible_size.width-visible_size.width/4, -5);
+	rectangle[2] = Vec2(visible_size.width-visible_size.width/4, 20);
+	rectangle[3] = Vec2(visible_size.width / 4, 20);
 
 	//Color4F white(1, 1, 1, 1);
 	//rectNode->drawRect(Vec2(rect.origin.x,rect.origin.y), Vec2(rect.size.height,rect.size.width), Color4F::BLACK);
@@ -40,7 +42,7 @@ cocos2d::extension::TableViewCell* BasicOfferTableViewDataSource::tableCellAtInd
 	
 	bg->addChild(label);
 //	label->setAnchorPoint(Vec2(0, 1));
-	label->setPosition(130, 10);
+	label->setPosition(Vec2(visible_size.width / 4+200, 10));
 	//label->setAlignment(cocos2d::TextHAlignment::CENTER, cocos2d::TextVAlignment::CENTER);
   //  cell->addChild(label);
 	
@@ -55,7 +57,10 @@ ssize_t BasicOfferTableViewDataSource::numberOfCellsInTableView(cocos2d::extensi
     return 10;
 }
 cocos2d::Size BasicOfferTableViewDataSource::tableCellSizeForIndex(cocos2d::extension::TableView* table, ssize_t idx) {
-	return Size(100, 30);
+	Size visible_size = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	return Size(600, 30);
 }
 void BasicOfferTableViewDelegate::tableCellTouched(cocos2d::extension::TableView* table,
     cocos2d::extension::TableViewCell* cell)
@@ -75,9 +80,9 @@ bool BasicOfferScene::init()
     mLayout.init();
     auto director = Director::getInstance();
     Size visible_size = director->getVisibleSize();
-
+	Vec2 origin = director->getVisibleOrigin();
     TableView* tb = TableView::create(&mDataSource, Size{ visible_size.width - 100, visible_size.height - 200 });
-	tb->setPosition(Vec2(100, 100));
+	tb->setPosition(Vec2(0 ,0 ));
     tb->setDelegate(&mTableDelegate);
     mLayout.addChild(tb);
 
