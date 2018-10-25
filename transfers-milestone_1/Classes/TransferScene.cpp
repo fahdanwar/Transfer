@@ -55,7 +55,7 @@ bool TransferScene::init()
 
     // Set price layout
     price_layout->setLayoutType(ui::Layout::Type::HORIZONTAL);
-    auto plus_button = gui::CreateButton("+");
+    auto plus_button = gui::CreateTextButton("+");
     plus_button->addTouchEventListener([](Ref* /* sender */, ui::Widget::TouchEventType type)
     {
         switch(type)
@@ -75,7 +75,7 @@ bool TransferScene::init()
     auto price_edit = EditBox::create(Size(300, 150), "edit_box.png");
     price_layout->addChild(price_edit);
 
-    auto minus_button = gui::CreateButton("-");
+    auto minus_button = gui::CreateTextButton("-");
     minus_button->addTouchEventListener([](Ref* /* sender */, ui::Widget::TouchEventType type)
     {
         switch (type)

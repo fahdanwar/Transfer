@@ -23,7 +23,7 @@ bool StartScreenScene::init()
     Director* director = Director::getInstance();
     Size visible_size = director->getVisibleSize();
     Vec2 origin = director->getVisibleOrigin();
-	director->setClearColor(cocos2d::Color4F::WHITE);
+	director->setClearColor(cocos2d::Color4F::BLACK);
 
     ui::Button* contractsButton = gui::CreateButton("Contracts");
 	mButtonsLayout.addButton(contractsButton, [](){ contractsTouchEvent(); });

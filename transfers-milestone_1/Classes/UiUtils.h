@@ -2,7 +2,7 @@
 #include <cocos2d.h>
 #include "cocos-ext.h"
 #include <ui/UILayout.h>
-
+#include<ui/UIScrollView.h>
 #include <functional>
 
 namespace transfers

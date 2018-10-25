@@ -15,7 +15,7 @@ cocos2d::extension::TableViewCell* BasicOfferTableViewDataSource::tableCellAtInd
     cell = TableViewCell::create();
     auto background_color = Color3B(255, 255, 255);
     Sprite * bg = Sprite::create();
-    //bg->setAnchorPoint(Point(0, 0));
+  //  bg->setAnchorPoint(Vec2(0, 0));
     bg->setTextureRect(Rect(0, 0, Director::getInstance()->getWinSize().width, 24));
     bg->setColor(background_color);
     bg->setTag(100);
@@ -39,10 +39,10 @@ cocos2d::extension::TableViewCell* BasicOfferTableViewDataSource::tableCellAtInd
     // TODO: real player name
     label->setString("Player name");
 	label->setColor(Color3B::BLACK);
-	
+	label->setPosition(Vec2(visible_size.width / 4 + 200, 10));
+
 	bg->addChild(label);
 //	label->setAnchorPoint(Vec2(0, 1));
-	label->setPosition(Vec2(visible_size.width / 4+200, 10));
 	//label->setAlignment(cocos2d::TextHAlignment::CENTER, cocos2d::TextVAlignment::CENTER);
   //  cell->addChild(label);
 	
